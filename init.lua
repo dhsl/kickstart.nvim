@@ -986,6 +986,18 @@ require('lazy').setup({
       { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
+  {
+    'Bishop-Fox/colorblocks.nvim',
+    config = function()
+      require('colorblocks').setup {
+        symbol = 'v󱡕',
+        virt_text_pos = 'eol',
+        mode = 'fg',
+        section = { 'S', '  ', 'The color is: ', 'H' },
+        filetypes = { 'lua', 'css' },
+      }
+    end,
+  },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
