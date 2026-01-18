@@ -610,6 +610,8 @@ require('lazy').setup({
 
         biome = {},
 
+        ruff = {},
+
         ts_ls = {
           on_attach = function(client)
             client.server_capabilities.documentFormattingProvider = false
@@ -707,6 +709,7 @@ require('lazy').setup({
         javascriptreact = { 'biome-check' },
         typescriptreact = { 'biome-check' },
         json = { 'biome-check' },
+        python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
