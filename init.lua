@@ -619,6 +619,8 @@ require('lazy').setup({
           end,
         },
 
+        pyright = {},
+
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -710,6 +712,10 @@ require('lazy').setup({
         typescriptreact = { 'biome-check' },
         json = { 'biome-check' },
         python = { 'ruff_fix', 'ruff_format', 'ruff_organize_imports' },
+        markdown = { 'dprint' },
+        dockerfile = { 'dprint' },
+        yaml = { 'yamlfmt' },
+        ['*'] = { 'trim-whitespace' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
