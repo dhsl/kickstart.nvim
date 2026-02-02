@@ -619,7 +619,26 @@ require('lazy').setup({
           end,
         },
 
-        pyright = {},
+        pyright = {
+          before_init = function(_, config)
+            config.settings.python.pythonPath = vim.fn.exepath 'python'
+          end,
+
+          on_attach = function(client)
+            client.server_capabilities.documentFormattingProvider = false
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
+
+          settings = {
+            python = {
+              analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = 'workspace',
+              },
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = { ... },
